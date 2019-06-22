@@ -1,0 +1,114 @@
+<IButton@Button>:
+    background_normal: ''
+    font_size: '28sp'
+    background_color: [.09, .09, .09, 1]
+
+<Interface>:
+    orientation: 'vertical'
+    padding: 5
+
+    label: label
+    Label:
+        id: label
+        font_size: '36sp'
+        halign: 'right'
+        size_hint: (1, .4)
+        padding_y: 10
+        text: ''
+        text_size: self.size
+
+    GridLayout:
+        cols: 4
+        spacing: 3
+        size_hint: (1, .6)
+        IButton:
+            text: 'Текущее\n  время'
+            font_size: '18sp'
+            on_press:
+                root.cur_time()
+        IButton:
+            text: 'C'
+            on_press:
+                root.result_clear()
+        IButton:
+            text: '<'
+            on_press:
+                root.result_del()
+        IButton:
+            text: '/'
+            on_press:
+                root.add_operation(self.text)
+        IButton:
+            text: '7'
+            background_color: [.03, .03, .03, 1]
+            on_press:
+                root.add_number(self.text)
+        IButton:
+            text: '8'
+            background_color: [.03, .03, .03, 1]
+            on_press:
+                root.add_number(self.text)
+        IButton:
+            text: '9'
+            background_color: [.03, .03, .03, 1]
+            on_press:
+                root.add_number(self.text)
+        IButton:
+            text: 'x'
+            on_press:
+                root.add_operation(self.text)
+        IButton:
+            text: '4'
+            background_color: [.03, .03, .03, 1]
+            on_press:
+                root.add_number(self.text)
+        IButton:
+            text: '5'
+            background_color: [.03, .03, .03, 1]
+            on_press:
+                root.add_number(self.text)
+        IButton:
+            text: '6'
+            background_color: [.03, .03, .03, 1]
+            on_press:
+                root.add_number(self.text)
+        IButton:
+            text: '-'
+            on_press:
+                root.add_operation(self.text)
+        IButton:
+            text: '1'
+            background_color: [.03, .03, .03, 1]
+            on_press:
+                root.add_number(self.text)
+        IButton:
+            text: '2'
+            background_color: [.03, .03, .03, 1]
+            on_press:
+                root.add_number(self.text)
+        IButton:
+            text: '3'
+            background_color: [.03, .03, .03, 1]
+            on_press:
+                root.add_number(self.text)
+        IButton:
+            text: '+'
+            on_press:
+                root.add_operation(self.text)
+        IButton:
+            text: '( )'
+            on_state:
+                root.upkeys(self.state)
+        IButton:
+            text: '0'
+            background_color: [.03, .03, .03, 1]
+            on_press:
+                root.add_number(self.text)
+        IButton:
+            text: ':'
+            on_press:
+                root.split_time()
+        IButton:
+            text: '='
+            on_press:
+                root.calc_result()
